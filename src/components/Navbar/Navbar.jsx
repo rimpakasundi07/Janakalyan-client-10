@@ -9,6 +9,10 @@ const Navbar = () => {
       </li>
 
       <li>
+        <NavLink to="/register">Register</NavLink>
+      </li>
+
+      {/* <li>
         <NavLink to="/allissues">All Issues</NavLink>
       </li>
       <li>
@@ -19,7 +23,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/myContribution">My Contribution</NavLink>
-      </li>
+      </li> */}
     </>
   );
   return (
