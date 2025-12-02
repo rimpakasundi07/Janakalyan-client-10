@@ -1,30 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
+import { NavLink } from "react-router";
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
+  const { signInWithGoogle } = useContext(AuthContext);
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="min-h-screen flex justify-center items-center bg-gradient-to-tr from-white via-slate-50 to-sky-50 p-6">
-      <div className="w-6/12 bg-white rounded-2xl shadow-lg overflow-hidden grid  md:grid-cols-1">
-        {/* Right - Form */}
+      <div className=" bg-white rounded-2xl shadow-lg overflow-hidden ">
         <div className="p-6 md:p-10">
-          <h3 className="lg:text-4xl text-sky-400 text-center text-2xl font-bold mb-2">
-            Login Now !
+          <h3 className="lg:text-5xl text-sky-400 text-center text-2xl font-bold mb-2">
+            Login here !
           </h3>
 
           <form className="space-y-4">
-            {/* full name */}
-            <div>
+            <div className="py-4">
               <label className="block text-sm font-medium text-slate-700">
                 Full name
               </label>
               <input
                 name="fullName"
-                className="mt-1 block w-10/12 rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                className="mt-1 block w-full rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 placeholder="Your full name"
               />
             </div>
 
-            <div className="flex justify-between items-center gap-5">
-              {/* email */}
+            <div className="grid lg:grid-cols-2 gap-5">
               <div>
                 <label className="block text-sm font-medium text-slate-700">
                   Email
@@ -37,29 +46,20 @@ const Login = () => {
                 />
               </div>
 
-              {/* password / confirm */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700">
-                    Password
-                  </label>
-                  <div className="relative">
-                    <input
-                      name="password"
-                      className="mt-1 block w-full rounded-lg border p-3 pr-12 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400 "
-                      placeholder="Enter password"
-                    />
-                    <button
-                      type="button"
-                      aria-label="Toggle password visibility"
-                      className="absolute right-2 top-1/2 -translate-y-1/2 text-sm px-2 py-1 rounded-md"
-                    ></button>
-                  </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700">
+                  Password
+                </label>
+                <div className="relative">
+                  <input
+                    name="password"
+                    className="mt-1 block w-full rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400 "
+                    placeholder="Enter password"
+                  />
                 </div>
               </div>
             </div>
 
-            {/* terms */}
             <div className="flex items-start gap-2">
               <input
                 id="accept"
@@ -75,7 +75,6 @@ const Login = () => {
               </label>
             </div>
 
-            {/* submit */}
             <div className="space-y-3">
               <button
                 type="submit"
@@ -91,11 +90,51 @@ const Login = () => {
               </div>
             </div>
 
-            <p className="text-center text-sm text-slate-500 mt-3">
-              Already have an account?{" "}
-              <a href="#" className="underline">
+            {/* Google */}
+
+            <button
+              onClick={handleGoogleSignIn}
+              type="button"
+              className="btn bg-white w-full text-black border-[#e5e5e5]"
+            >
+              <svg
+                aria-label="Google logo"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <g>
+                  <path d="m0 0H512V512H0" fill="#fff"></path>
+                  <path
+                    fill="#34a853"
+                    d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
+                  ></path>
+                  <path
+                    fill="#4285f4"
+                    d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
+                  ></path>
+                  <path
+                    fill="#fbbc02"
+                    d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
+                  ></path>
+                  <path
+                    fill="#ea4335"
+                    d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
+                  ></path>
+                </g>
+              </svg>
+              Login with Google
+            </button>
+
+            <p className="text-center text-sm  mt-3">
+              Havn't an account?{" "}
+              <NavLink
+                className="hover:text-blue-600 hover:underline font-bold "
+                to="/register"
+              >
                 Register
-              </a>
+              </NavLink>
             </p>
           </form>
         </div>

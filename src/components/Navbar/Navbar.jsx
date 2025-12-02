@@ -9,10 +9,14 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink to="/register">Register</NavLink>
+        <NavLink to="/issues">Issues</NavLink>
       </li>
       <li>
         <NavLink to="/login">Login</NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/register">Register</NavLink>
       </li>
 
       {/* <li>
