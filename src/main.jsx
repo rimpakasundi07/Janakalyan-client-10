@@ -11,6 +11,7 @@ import Issues from "./components/Issues/Issues";
 import Login from "./components/Login/Login";
 import AllIssue from "./components/AllIssue/AllIssue";
 import AddIssues from "./components/AddIssues/AddIssues";
+import MyIssues from "./components/MyIssues/MyIssues";
 
 const router = createBrowserRouter([
   {
@@ -41,10 +42,10 @@ const router = createBrowserRouter([
         path: "/addIssues",
         element: AddIssues,
       },
-      //  {
-      //   path:'/',
-      //   element:
-      // },
+      {
+        path: "/myIssues",
+        element: MyIssues,
+      },
       //  {
       //   path:'/',
       //   element:
