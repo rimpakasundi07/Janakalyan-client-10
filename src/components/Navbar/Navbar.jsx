@@ -1,9 +1,19 @@
 import React, { use } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
-  const { user } = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
+  const handleLogOut = () => {
+    console.log("user tried to log out");
+    logOut()
+      .then(() => {
+        alert("You logged out successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const links = (
     <>
@@ -63,14 +73,20 @@ const Navbar = () => {
       <div className="navbar-end">
         <div className="lg:mr-4">
           {user ? (
-            <a className="btn text-white bg-sky-400 hover:bg-sky-700">
-              Sign Out
-            </a>
+            <Link
+              onClick={handleLogOut}
+              className="btn text-white bg-sky-400 hover:bg-sky-700"
+            >
+              Log Out
+            </Link>
           ) : (
-            <a className="btn text-white bg-sky-600 hover:bg-sky-400">
+            <Link
+              to="/login"
+              className="btn text-white bg-sky-600 hover:bg-sky-400"
+            >
               {" "}
               Login{" "}
-            </a>
+            </Link>
           )}
         </div>
         <img

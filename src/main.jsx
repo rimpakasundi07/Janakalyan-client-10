@@ -12,6 +12,7 @@ import Login from "./components/Login/Login";
 import AllIssue from "./components/AllIssue/AllIssue";
 import AddIssues from "./components/AddIssues/AddIssues";
 import MyIssues from "./components/MyIssues/MyIssues";
+import MyContribution from "./components/MyContribution/MyContribution";
 
 const router = createBrowserRouter([
   {
@@ -36,20 +37,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/allIssue",
-        element: AllIssue,
+        element: <AllIssue></AllIssue>,
       },
       {
         path: "/addIssues",
-        element: AddIssues,
+        element: <AddIssues></AddIssues>,
       },
       {
         path: "/myIssues",
-        element: MyIssues,
+        element: <MyIssues></MyIssues>,
       },
-      //  {
-      //   path:'/',
-      //   element:
-      // }
+      {
+        path: "/myContribution",
+        element: <MyContribution></MyContribution>,
+      },
     ],
   },
 ]);
