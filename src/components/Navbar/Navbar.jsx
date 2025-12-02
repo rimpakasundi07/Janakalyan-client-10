@@ -22,18 +22,22 @@ const Navbar = () => {
         <NavLink to="/register">Register</NavLink>
       </li>
 
-      {/* <li>
-        <NavLink to="/allissues">All Issues</NavLink>
-      </li>
-      <li>
-        <NavLink to="/addIssues">Add Issues</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myIssues">My Issues</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myContribution">My Contribution</NavLink>
-      </li> */}
+      {user && (
+        <>
+          <li>
+            <NavLink to="/allissue">All Issues</NavLink>
+          </li>
+          <li>
+            <NavLink to="/addIssues">Add Issues</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myIssues">My Issues</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myContribution">My Contribution</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (

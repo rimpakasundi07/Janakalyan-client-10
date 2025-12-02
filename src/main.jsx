@@ -9,6 +9,8 @@ import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Register/Register";
 import Issues from "./components/Issues/Issues";
 import Login from "./components/Login/Login";
+import AllIssue from "./components/AllIssue/AllIssue";
+import AddIssues from "./components/AddIssues/AddIssues";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,22 @@ const router = createBrowserRouter([
         path: "/register",
         Component: Register,
       },
+      {
+        path: "/allIssue",
+        element: AllIssue,
+      },
+      {
+        path: "/addIssues",
+        element: AddIssues,
+      },
+      //  {
+      //   path:'/',
+      //   element:
+      // },
+      //  {
+      //   path:'/',
+      //   element:
+      // }
     ],
   },
 ]);
