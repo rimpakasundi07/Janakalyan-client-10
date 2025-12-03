@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
+import { toast } from "@rskm/react-sparkalert";
 
 // ReportIssueForm.jsx
 // Uses react-hook-form for simpler form handling and validation.
@@ -9,7 +10,7 @@ import axios from "axios";
 
 export default function ReportIssueForm() {
   const { user } = useContext(AuthContext);
-  const [submitted, setSubmitted] = useState(null);
+  const [setSubmitted] = useState(null);
 
   const {
     register,
@@ -29,7 +30,14 @@ export default function ReportIssueForm() {
     },
   });
 
-  const categories = ["Garbage", "Road", "Waterlogging", "Other"];
+  const categories = [
+    "Garbage",
+    "Road",
+    "Waterlogging",
+    "Broken Property",
+    "Illegal Construction",
+    "Other",
+  ];
 
   async function onSubmit(values) {
     try {
@@ -49,7 +57,7 @@ export default function ReportIssueForm() {
 
       const res = await axios.post("http://localhost:3000/issue", payload);
 
-      console.log("Saved to backend:", res.data);
+      toast.success("Issue submitted successfully!");
       setSubmitted(res.data);
 
       reset({
@@ -63,7 +71,10 @@ export default function ReportIssueForm() {
         email: user.email,
       });
     } catch (err) {
-      console.error("Error saving issue:", err);
+      toast.error(
+        err.response?.data?.message ||
+          "Failed to submit issue. Please try again!"
+      );
     }
   }
 

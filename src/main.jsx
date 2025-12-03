@@ -13,6 +13,8 @@ import AllIssue from "./components/AllIssue/AllIssue";
 import AddIssues from "./components/AddIssues/AddIssues";
 import MyIssues from "./components/MyIssues/MyIssues";
 import MyContribution from "./components/MyContribution/MyContribution";
+import { ToastContainer } from "@rskm/react-sparkalert";
+import "@rskm/react-sparkalert/dist/index.css";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <ToastContainer position="top-center" autoClose={5000} theme="colored" />
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>

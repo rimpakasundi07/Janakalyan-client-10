@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "title": "Garbage Overflow on Street",
+    "description": "A large pile of garbage has accumulated on the roadside and has not been removed for several days. The foul smell is spreading throughout the neighborhood, making it difficult for residents to walk through the area. The garbage has also become a breeding ground for mosquitoes and insects, increasing the chances of disease outbreaks and creating an unhygienic environment for the community.",
+    "category": "Garbage",
+    "categoryColor": "green",
+    "image": "https://i.ibb.co/S7Jx3m96/Gemini-Generated-Image-re2xe3re2xe3re2x.png",
+    "location": "Kolkata, India"
+  },
+  {
+    "id": 2,
+    "title": "Unauthorized Building Extension",
+    "description": "An illegal extension of a residential building has been constructed without approval from the local authorities. The structure is unstable and poses a threat to nearby homes, especially during heavy rain or strong winds. Residents have reported cracks on adjacent walls and fear that the unapproved construction could lead to severe safety hazards if not addressed immediately.",
+    "category": "Illegal Construction",
+    "categoryColor": "red",
+    "image": "https://i.ibb.co/nsgXWrMG/card2.png",
+    "location": "Delhi, India"
+  },
+  {
+    "id": 3,
+    "title": "Damaged Public Street Light",
+    "description": "Several street lights in the locality have stopped working, leaving the entire stretch dark at night. This has increased the chances of petty theft, accidents, and other safety concerns. People returning home late in the evening feel unsafe walking through the poorly lit roads. The lack of lighting is also making it difficult for vehicles to navigate the area safely.",
+    "category": "Broken Property",
+    "categoryColor": "blue",
+    "image": "https://i.ibb.co/b5Vj5Ddt/card3.png",
+    "location": "Mumbai, India"
+  },
+  {
+    "id": 4,
+    "title": "Deep Potholes on Highway",
+    "description": "Multiple deep potholes have formed on a busy highway due to continuous rainfall and poor maintenance. These potholes are causing traffic congestion and have already resulted in several accidents. Two-wheelers, in particular, are at high risk of slipping or losing balance. The damaged road requires urgent repair to prevent further mishaps and ensure smooth transportation.",
+    "category": "Road Damage",
+    "categoryColor": "yellow",
+    "image": "https://i.ibb.co/gFHXHBBY/card4.png",
+    "location": "Bengaluru, India"
+  },
+  {
+    "id": 5,
+    "title": "Damaged Public Park Bench",
+    "description": "A wooden bench in the local public park has deteriorated due to lack of maintenance. Several planks are broken, making it unsafe for children, elderly people, and daily walkers who sit there. Visitors have complained that the damaged bench is reducing the beauty of the park and needs to be repaired or replaced before someone gets hurt while using it.",
+    "category": "Broken Property",
+    "categoryColor": "blue",
+    "image": "https://i.ibb.co/gbS527rB/card5.png",
+    "location": "Pune, India"
+  },
+  {
+    "id": 6,
+    "title": "Garbage Dump Near School",
+    "description": "A large amount of garbage has been dumped right next to a school boundary wall. The waste emits an unbearable odor and attracts stray animals and insects. Parents are worried about the health risks to students, especially young children. The unhygienic conditions pose a serious threat to the well-being of students and need immediate removal.",
+    "category": "Garbage",
+    "categoryColor": "green",
+    "image": "https://i.ibb.co/R40Ltrtq/card6.png",
+    "location": "Chennai, India"
+  },
+  {
+    "id": 7,
+    "title": "Broken Footpath Tiles",
+    "description": "Several tiles on the footpath have come loose or broken completely, creating an uneven surface. This is extremely dangerous for pedestrians, especially senior citizens and children who use the walkway daily. Many people have already tripped over the broken tiles, and the footpath needs urgent repair to prevent future injuries and ensure safe passage.",
+    "category": "Broken Property",
+    "categoryColor": "blue",
+    "image": "https://i.ibb.co/7NzDyyS4/card7-1.png",
+    "location": "Hyderabad, India"
+  },
+  {
+    "id": 8,
+    "title": "Illegal Roadside Shop Setup",
+    "description": "Unauthorized street vendors have set up temporary shops on a crowded footpath, blocking pedestrian movement. The illegal setup is causing significant traffic congestion and forcing people to walk on the road, increasing the risk of accidents. Local authorities need to intervene to remove the unauthorized stalls and restore smooth pedestrian flow.",
+    "category": "Illegal Construction",
+    "categoryColor": "red",
+    "image": "https://i.ibb.co/TDL2R4h3/card8-1.png",
+    "location": "Lucknow, India"
+  },
+
+  {
+    "id": 9,
+    "title": "Overflowing Drainage System",
+    "description": "The drainage system in the area is completely clogged, causing dirty water to overflow onto the streets. The stagnant, foul-smelling water is spreading mosquitoes and increasing the chances of waterborne diseases. Residents are unable to walk through the flooded roads, and urgent cleaning and repair work is required to restore hygiene.",
+    "category": "Garbage",
+    "categoryColor": "green",
+    "image": "https://i.ibb.co/39k1XM3W/card9-1.png",
+    "location": "Patna, India"
+  },
+  {
+    "id": 10,
+    "title": "Major Road Crack on Bridge",
+    "description": "A major crack has developed on a public bridge, raising serious concerns about its structural safety. Frequent heavy vehicle movement has worsened the crack, and people fear that the bridge may collapse if immediate repairs are not carried out. Authorities must take quick action to inspect and restore the damaged area before a disaster occurs.",
+    "category": "Road Damage",
+    "categoryColor": "yellow",
+    "image": "https://i.ibb.co/jPvrx57C/card10-2.png",
+    "location": "Jaipur, India"
+  }
+]
