@@ -1,8 +1,27 @@
-import React, { useContext } from "react";
+import React, { use, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { NavLink } from "react-router";
 
 const Register = () => {
+  const { createUser } = use(AuthContext);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log({ name, email, password });
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorCode, errorMessage);
+      });
+  };
   const { signInWithGoogle } = useContext(AuthContext);
 
   const handleGoogleSignIn = () => {
@@ -26,15 +45,16 @@ const Register = () => {
             Create a new account — it only takes a minute.
           </p>
 
-          <form className="space-y-4">
+          <form onSubmit={handleRegister} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-slate-700">
                 Full name
               </label>
               <input
-                name="fullName"
+                name="name"
                 className="mt-1 block w-full rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 placeholder="Your full name"
+                required
               />
             </div>
 
@@ -48,6 +68,7 @@ const Register = () => {
                   type="email"
                   className="mt-1 block w-full rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
                   placeholder="you@example.com"
+                  required
                 />
               </div>
 
@@ -57,9 +78,11 @@ const Register = () => {
                 </label>
                 <div className="relative">
                   <input
+                    type="password"
                     name="password"
                     className="mt-1 block w-full rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400 "
                     placeholder="Enter password"
+                    required
                   />
                 </div>
               </div>
@@ -79,6 +102,8 @@ const Register = () => {
                 </a>
               </label>
             </div>
+
+            {/* register button */}
 
             <div className="space-y-3">
               <button
@@ -136,12 +161,12 @@ const Register = () => {
 
             <p className="text-center text-sm  mt-3">
               Already have an account?{" "}
-              <NavLink
+              <button
+                type="submit"
                 className="hover:text-blue-600 hover:underline font-bold "
-                to="/login"
               >
                 Login
-              </NavLink>
+              </button>
             </p>
           </form>
         </div>

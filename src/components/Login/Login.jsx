@@ -1,8 +1,29 @@
-import React, { useContext } from "react";
-import { NavLink } from "react-router";
+import React, { use, useContext } from "react";
+
 import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
+  const { signIn } = use(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log({ name, email, password });
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorCode, errorMessage);
+      });
+  };
   const { signInWithGoogle } = useContext(AuthContext);
   const handleGoogleSignIn = () => {
     signInWithGoogle()
@@ -21,19 +42,21 @@ const Login = () => {
             Login here !
           </h3>
 
-          <form className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-4">
             <div className="py-4">
               <label className="block text-sm font-medium text-slate-700">
                 Full name
               </label>
               <input
-                name="fullName"
+                name="name"
                 className="mt-1 block w-full rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 placeholder="Your full name"
+                required
               />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-5">
+              {/* email */}
               <div>
                 <label className="block text-sm font-medium text-slate-700">
                   Email
@@ -43,6 +66,7 @@ const Login = () => {
                   type="email"
                   className="mt-1 block w-full rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
                   placeholder="you@example.com"
+                  required
                 />
               </div>
 
@@ -52,13 +76,17 @@ const Login = () => {
                 </label>
                 <div className="relative">
                   <input
+                    type="password"
                     name="password"
                     className="mt-1 block w-full rounded-lg border p-3 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400 "
                     placeholder="Enter password"
+                    required
                   />
                 </div>
               </div>
             </div>
+
+            {/* terms */}
 
             <div className="flex items-start gap-2">
               <input
@@ -129,12 +157,12 @@ const Login = () => {
 
             <p className="text-center text-sm  mt-3">
               Havn't an account?{" "}
-              <NavLink
+              <button
+                type="submit"
                 className="hover:text-blue-600 hover:underline font-bold "
-                to="/register"
               >
                 Register
-              </NavLink>
+              </button>
             </p>
           </form>
         </div>
