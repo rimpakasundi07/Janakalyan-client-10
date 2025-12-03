@@ -62,7 +62,7 @@ const Navbar = () => {
           </ul>
         </div>
         <h2 className="lg:text-3xl font-bold text-sky-400 ml-4 text-xl">
-          জনকল্যাণ
+          Janakalyan
         </h2>
       </div>
 

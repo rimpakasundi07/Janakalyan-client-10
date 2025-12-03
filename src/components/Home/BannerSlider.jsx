@@ -31,14 +31,20 @@ const BannerSlider = () => {
 
           <div className="absolute inset-0 bg-black/50" />
 
-          <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-14 text-white">
+          <div
+            className="absolute inset-0 flex flex-col 
+          justify-center items-start px-6 md:px-14 text-white"
+          >
             <h2 className="text-2xl md:text-4xl font-bold mb-3">
               Keep Your Community Clean
             </h2>
             <p className="max-w-md text-sm md:text-lg mb-5">
               Raise awareness about waste management and report garbage issues.
             </p>
-            <button className="bg-green-600 px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+            <button
+              className="bg-blue-500 px-5 py-2 rounded-lg font-semibold
+             hover:bg-blue-800 transition"
+            >
               Report Issue
             </button>
           </div>
@@ -58,14 +64,20 @@ const BannerSlider = () => {
 
           <div className="absolute inset-0 bg-black/50" />
 
-          <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-14 text-white">
+          <div
+            className="absolute inset-0 flex 
+          flex-col justify-center items-start px-6 md:px-14 text-white"
+          >
             <h2 className="text-2xl md:text-4xl font-bold mb-3">
               Community Cleaning Action
             </h2>
             <p className="max-w-md text-sm md:text-lg mb-5">
               Encourage citizens to participate in cleaning campaigns.
             </p>
-            <button className="bg-green-600 px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+            <button
+              className="bg-blue-500 px-5 py-2 rounded-lg font-semibold
+             hover:bg-blue-800 transition"
+            >
               Join Now
             </button>
           </div>
@@ -85,14 +97,20 @@ const BannerSlider = () => {
 
           <div className="absolute inset-0 bg-black/50" />
 
-          <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-14 text-white">
+          <div
+            className="absolute inset-0
+           flex flex-col justify-center items-start px-6 md:px-14 text-white"
+          >
             <h2 className="text-2xl md:text-4xl font-bold mb-3">
               Build a Sustainable Future
             </h2>
             <p className="max-w-md text-sm md:text-lg mb-5">
               Report environmental issues and help build a greener society.
             </p>
-            <button className="bg-green-600 px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+            <button
+              className="bg-blue-500 px-5 
+            py-2 rounded-lg font-semibold hover:bg-blue-800 transition"
+            >
               Learn More
             </button>
           </div>
