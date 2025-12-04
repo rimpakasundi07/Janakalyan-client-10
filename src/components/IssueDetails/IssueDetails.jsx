@@ -59,6 +59,131 @@ export default function IssueDetails() {
 
         {/* Open the modal using document.getElementById('ID').showModal() method */}
 
+        <dialog
+          ref={issueModalRef}
+          className="modal modal-bottom sm:modal-middle"
+        >
+          <div className="modal-box">
+            <h3 className="font-bold lg:text-3xl text-center text-sky-400 text-lg">
+              Pay Clean-Up Contribution!
+            </h3>
+
+            {/* form should NOT be inside modal-action */}
+            <form
+              onSubmit={handleIssueSubmit}
+              method="dialog"
+              className="space-y-3"
+            >
+              {/* Title */}
+              <div>
+                <label className="block text-sm mb-1">Title</label>
+                <input
+                  name="title"
+                  className="w-full border rounded-md px-3 py-2 text-sm"
+                />
+              </div>
+
+              {/* Category + Amount */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm mb-1">Category</label>
+                  <select
+                    name="category"
+                    className="w-full border rounded-md px-3 py-2 text-sm"
+                  >
+                    <option value="">Select a category</option>
+                    <option value="garbage">Garbage</option>
+                    <option value="road">Road</option>
+                    <option value="water">Water</option>
+                    <option value="Broken Property">Broken Property</option>
+                    <option value="Illegal Construction">
+                      Illegal Construction
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm mb-1">Amount</label>
+                  <input
+                    name="amount"
+                    placeholder="Amount"
+                    className="w-full border rounded-md px-3 py-2 text-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Contributor */}
+              <div>
+                <label className="block text-sm mb-1">Contributor name</label>
+                <input
+                  name="contributor"
+                  placeholder="Contributor Name"
+                  className="w-full border rounded-md px-3 py-2 text-sm"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-sm mb-1">Email</label>
+                <input
+                  name="email"
+                  className="w-full border rounded-md px-3 py-2 text-sm bg-gray-50"
+                />
+              </div>
+
+              {/* Phone + Address */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm mb-1">Phone no</label>
+                  <input
+                    name="phone"
+                    placeholder="Phone Number"
+                    className="w-full border rounded-md px-3 py-2 text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm mb-1">Address</label>
+                  <input
+                    name="address"
+                    placeholder="Address"
+                    className="w-full border rounded-md px-3 py-2 text-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Additional Info */}
+              <div>
+                <label className="block text-sm mb-1">Additional info</label>
+                <textarea
+                  name="info"
+                  placeholder="Additional info"
+                  rows={3}
+                  className="w-full border rounded-md px-3 py-2 text-sm resize-none"
+                />
+              </div>
+
+              {/* Buttons → Only here modal-action */}
+              <div className="modal-action flex justify-center">
+                <button
+                  type="button"
+                  onClick={() => issueModalRef.current.close()}
+                  className="px-6 py-2 rounded-full border border-sky-300 text-sky-500"
+                >
+                  Cancel
+                </button>
+
+                <button
+                  type="submit"
+                  className="px-6 py-2 rounded-full bg-sky-400 text-white font-semibold shadow-sm"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </dialog>
+
         {/* Button */}
         <button
           onClick={handleModalOpen}
