@@ -22,7 +22,7 @@ export default function IssueCategories() {
 
   return (
     <section className="container mx-auto px-4 mt-12">
-      <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
+      <h2 className="text-3xl font-bold mb-8 text-sky-400 text-center">
         Issue Categories
       </h2>
 
