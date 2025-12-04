@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Issues = ({ issue }) => {
-  const { title, description, image, category, location } = issue;
+  const { _id, title, description, image, category, location } = issue;
   return (
     <div className="shadow-2xl border  border-sky-400 p-2 hover:border-3 hover:border-dashed hover:border-sky-400 rounded-2xl">
       <div className="card ">
@@ -24,9 +25,12 @@ const Issues = ({ issue }) => {
             </p>
           </div>
           <div className="card-actions">
-            <button className="btn bg-sky-400 text-white hover:bg-sky-600">
+            <Link
+              to={`/issueDetails/${_id}`}
+              className="btn bg-sky-400 w-[500px] text-white hover:bg-sky-600"
+            >
               See Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>

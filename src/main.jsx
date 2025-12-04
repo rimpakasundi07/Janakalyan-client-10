@@ -15,6 +15,7 @@ import MyIssues from "./components/MyIssues/MyIssues";
 import MyContribution from "./components/MyContribution/MyContribution";
 import { ToastContainer } from "@rskm/react-sparkalert";
 import "@rskm/react-sparkalert/dist/index.css";
+import IssueDetails from "./components/IssueDetails/IssueDetails";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/myContribution",
         element: <MyContribution></MyContribution>,
+      },
+      {
+        path: "/issueDetails/:id",
+        element: <IssueDetails></IssueDetails>,
       },
     ],
   },
