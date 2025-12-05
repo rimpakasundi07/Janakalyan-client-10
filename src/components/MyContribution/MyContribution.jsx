@@ -15,7 +15,7 @@ const MyContribution = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [user.email]);
 
   return (
     <div className="lg:pb-20 lg:pt-5 py-6">
