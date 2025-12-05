@@ -13,6 +13,35 @@ export default function IssueDetails() {
 
   const handleIssueSubmit = (e) => {
     e.preventDefault();
+
+    const title = e.target.title.value;
+    const category = e.target.category.value;
+
+    const email = e.target.email.value;
+    const amount = e.target.amount.value;
+
+    console.log(title, email, amount, date, category);
+
+    const newIssue = {
+      ContributionId: issue._id,
+      title: title,
+      category: category,
+      email: email,
+      amount: amount,
+      status: "ongoing",
+      date: date,
+    };
+    fetch("http://localhost:3000/myContribution", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newIssue),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("after creating issue", data);
+      });
   };
 
   console.log(issue);
@@ -66,7 +95,7 @@ export default function IssueDetails() {
           className="modal modal-bottom sm:modal-middle"
         >
           <div className="modal-box">
-            <h3 className="font-bold lg:text-3xl lg:py-4 text-center hover:text-blue-800 text-sky-400 text-lg">
+            <h3 className="font-bold lg:text-3xl lg:pb-4 text-center hover:text-blue-800 text-sky-400 text-lg">
               Pay Clean-Up Contribution!
             </h3>
 
@@ -84,7 +113,6 @@ export default function IssueDetails() {
                 <input
                   required
                   name="title"
-                  defaultValue={user.title}
                   className="w-full border rounded-md px-3 py-2 text-sm"
                 />
               </div>
@@ -126,7 +154,7 @@ export default function IssueDetails() {
               {/* Contributor */}
               <div>
                 <label className="block lg:text-xl font-semibold text-sm mb-1">
-                  Contributor name:
+                  Contributor name
                 </label>
                 <input
                   name="contributor"
