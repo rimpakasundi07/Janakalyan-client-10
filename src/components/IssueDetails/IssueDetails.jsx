@@ -1,9 +1,11 @@
-import { useRef } from "react";
+import { use, useRef } from "react";
 import { useLoaderData } from "react-router";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function IssueDetails() {
   const issue = useLoaderData();
   const issueModalRef = useRef(null);
+  const { user } = use(AuthContext);
 
   const handleModalOpen = () => {
     issueModalRef.current.showModal();
@@ -64,7 +66,7 @@ export default function IssueDetails() {
           className="modal modal-bottom sm:modal-middle"
         >
           <div className="modal-box">
-            <h3 className="font-bold lg:text-3xl text-center text-sky-400 text-lg">
+            <h3 className="font-bold lg:text-3xl lg:py-4 text-center hover:text-blue-800 text-sky-400 text-lg">
               Pay Clean-Up Contribution!
             </h3>
 
@@ -76,9 +78,13 @@ export default function IssueDetails() {
             >
               {/* Title */}
               <div>
-                <label className="block text-sm mb-1">Title</label>
+                <label className="block lg:text-xl font-semibold text-sm mb-1">
+                  Title
+                </label>
                 <input
+                  required
                   name="title"
+                  defaultValue={user.title}
                   className="w-full border rounded-md px-3 py-2 text-sm"
                 />
               </div>
@@ -86,10 +92,13 @@ export default function IssueDetails() {
               {/* Category + Amount */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm mb-1">Category</label>
+                  <label className="block lg:text-xl font-semibold text-sm mb-1">
+                    Category
+                  </label>
                   <select
                     name="category"
-                    className="w-full border rounded-md px-3 py-2 text-sm"
+                    required
+                    className="w-full border  rounded-md px-3 py-2 text-sm"
                   >
                     <option value="">Select a category</option>
                     <option value="garbage">Garbage</option>
@@ -103,10 +112,12 @@ export default function IssueDetails() {
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-1">Amount</label>
+                  <label className="block lg:text-xl font-semibold text-sm mb-1">
+                    Amount
+                  </label>
                   <input
                     name="amount"
-                    placeholder="Amount"
+                    placeholder="Please enter a amount"
                     className="w-full border rounded-md px-3 py-2 text-sm"
                   />
                 </div>
@@ -114,19 +125,26 @@ export default function IssueDetails() {
 
               {/* Contributor */}
               <div>
-                <label className="block text-sm mb-1">Contributor name</label>
+                <label className="block lg:text-xl font-semibold text-sm mb-1">
+                  Contributor name:
+                </label>
                 <input
                   name="contributor"
-                  placeholder="Contributor Name"
+                  required
+                  placeholder="Insert a official name"
                   className="w-full border rounded-md px-3 py-2 text-sm"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label className="block text-sm mb-1">Email</label>
+                <label className="block lg:text-xl font-semibold text-sm mb-1">
+                  Email
+                </label>
                 <input
                   name="email"
+                  readOnly
+                  defaultValue={user.email}
                   className="w-full border rounded-md px-3 py-2 text-sm bg-gray-50"
                 />
               </div>
@@ -134,17 +152,23 @@ export default function IssueDetails() {
               {/* Phone + Address */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm mb-1">Phone no</label>
+                  <label className="block lg:text-xl font-semibold text-sm mb-1">
+                    Phone no
+                  </label>
                   <input
+                    required
                     name="phone"
-                    placeholder="Phone Number"
+                    placeholder="Your phone Number"
                     className="w-full border rounded-md px-3 py-2 text-sm"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm mb-1">Address</label>
+                  <label className="block lg:text-xl font-semibold text-sm mb-1">
+                    Address
+                  </label>
                   <input
+                    required
                     name="address"
                     placeholder="Address"
                     className="w-full border rounded-md px-3 py-2 text-sm"
@@ -154,10 +178,12 @@ export default function IssueDetails() {
 
               {/* Additional Info */}
               <div>
-                <label className="block text-sm mb-1">Additional info</label>
+                <label className="block lg:text-xl font-semibold text-sm mb-1">
+                  Additional info
+                </label>
                 <textarea
                   name="info"
-                  placeholder="Additional info"
+                  placeholder="Write a additional info"
                   rows={3}
                   className="w-full border rounded-md px-3 py-2 text-sm resize-none"
                 />
@@ -168,14 +194,14 @@ export default function IssueDetails() {
                 <button
                   type="button"
                   onClick={() => issueModalRef.current.close()}
-                  className="px-6 py-2 rounded-full border border-sky-300 text-sky-500"
+                  className="px-6 py-2 rounded-full cursor-pointer border-2  hover:border-blue-900 hover:text-blue-900 font-semibold border-sky-300 text-sky-500"
                 >
                   Cancel
                 </button>
 
                 <button
                   type="submit"
-                  className="px-6 py-2 rounded-full bg-sky-400 text-white font-semibold shadow-sm"
+                  className="px-6 py-2 rounded-full bg-sky-400 cursor-pointer hover:bg-blue-900 text-white font-semibold shadow-sm"
                 >
                   Submit
                 </button>
@@ -183,6 +209,12 @@ export default function IssueDetails() {
             </form>
           </div>
         </dialog>
+
+        <input
+          className="text-blue-800 font-semibold"
+          defaultValue={user.email}
+          type="text"
+        />
 
         {/* Button */}
         <button

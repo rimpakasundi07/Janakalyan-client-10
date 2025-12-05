@@ -26,10 +26,7 @@ const router = createBrowserRouter([
         index: true,
         Component: Home,
       },
-      {
-        path: "/issues",
-        Component: Issues,
-      },
+
       {
         path: "/login",
         Component: Login,
