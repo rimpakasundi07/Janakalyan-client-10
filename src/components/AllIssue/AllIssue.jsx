@@ -21,7 +21,7 @@ const AllIssue = () => {
       <p className="lg:text-4xl text-sky-400 text-2xl font-bold text-center lg:py-10 py-4">
         All Issues are here
       </p>
-      <div className="container px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto">
+      <div className="container px-4 lg:px-20 grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto">
         {allIssue?.map((issue) => (
           <Issues key={issue._id} issue={issue}></Issues>
         ))}

@@ -5,6 +5,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from "react-router";
 
 const BannerSlider = () => {
   return (
@@ -41,12 +42,13 @@ const BannerSlider = () => {
             <p className="max-w-md text-sm md:text-lg mb-5">
               Raise awareness about waste management and report garbage issues.
             </p>
-            <button
-              className="bg-blue-500 px-5 py-2 rounded-lg font-semibold
+            <Link
+              to="/addIssues"
+              className="bg-blue-500 px-5 py-2 rounded-lg cursor-pointer font-semibold
              hover:bg-blue-800 transition"
             >
               Report Issue
-            </button>
+            </Link>
           </div>
         </div>
       </SwiperSlide>
@@ -74,12 +76,13 @@ const BannerSlider = () => {
             <p className="max-w-md text-sm md:text-lg mb-5">
               Encourage citizens to participate in cleaning campaigns.
             </p>
-            <button
-              className="bg-blue-500 px-5 py-2 rounded-lg font-semibold
+            <Link
+              to="/register"
+              className="bg-blue-500 px-5 py-2 cursor-pointer  rounded-lg font-semibold
              hover:bg-blue-800 transition"
             >
               Join Now
-            </button>
+            </Link>
           </div>
         </div>
       </SwiperSlide>
@@ -107,12 +110,13 @@ const BannerSlider = () => {
             <p className="max-w-md text-sm md:text-lg mb-5">
               Report environmental issues and help build a greener society.
             </p>
-            <button
+            <Link
+              to="/allIssue"
               className="bg-blue-500 px-5 
-            py-2 rounded-lg font-semibold hover:bg-blue-800 transition"
+            py-2 rounded-lg font-semibold hover:bg-blue-800  cursor-pointer  transition"
             >
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
       </SwiperSlide>

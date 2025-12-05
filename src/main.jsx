@@ -16,6 +16,7 @@ import MyContribution from "./components/MyContribution/MyContribution";
 import { ToastContainer } from "@rskm/react-sparkalert";
 import "@rskm/react-sparkalert/dist/index.css";
 import IssueDetails from "./components/IssueDetails/IssueDetails";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -55,7 +56,11 @@ const router = createBrowserRouter([
         path: "/issueDetails/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/issue/${params.id}`),
-        element: <IssueDetails></IssueDetails>,
+        element: (
+          <PrivateRoute>
+            <IssueDetails></IssueDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },

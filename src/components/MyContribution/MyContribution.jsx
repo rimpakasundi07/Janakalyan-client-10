@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const MyContribution = () => {
+  const { user } = useContext(AuthContext);
   const [contribution, setContributions] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/myContribution")
+      .get(`http://localhost:3000/myContribution?email=${user.email}`)
       .then((res) => {
         setContributions(res.data);
       })
