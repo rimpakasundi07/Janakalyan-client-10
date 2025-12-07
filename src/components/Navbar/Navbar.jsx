@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
@@ -58,9 +59,12 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <h2 className="lg:text-3xl font-bold text-sky-400 ml-4 text-xl">
-          Janakalyan
-        </h2>
+        <div className="flex items-center">
+          <img className="w-16" src={logo} alt="" />
+          <h2 className="lg:text-3xl font-bold text-sky-400 ml-4 text-xl">
+            Janakalyan
+          </h2>
+        </div>
       </div>
 
       <div className="navbar-center hidden lg:flex">
