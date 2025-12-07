@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul className="menu  menu-horizontal px-1">{links}</ul>
       </div>
 
       <div className="navbar-end">
@@ -77,13 +77,21 @@ const Navbar = () => {
               Log Out
             </Link>
           ) : (
-            <Link
-              to="/login"
-              className="btn text-white bg-sky-600 hover:bg-sky-400"
-            >
-              {" "}
-              Login{" "}
-            </Link>
+            <div className="flex gap-3">
+              <Link
+                to="/register"
+                className="btn text-white bg-sky-600 hover:bg-sky-400"
+              >
+                Register
+              </Link>
+
+              <Link
+                to="/login"
+                className="btn text-white bg-sky-600 hover:bg-sky-400"
+              >
+                Login
+              </Link>
+            </div>
           )}
         </div>
         <img
